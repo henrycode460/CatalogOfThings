@@ -29,6 +29,7 @@ class MakeChoice
           12 - Add a movie
           13 - Exit"
   end
+  # rubocop:disable Metrics/CyclomaticComplexity
 
   def choices(option)
     case option
@@ -58,4 +59,5 @@ class MakeChoice
       @app.Add_a_movie
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
