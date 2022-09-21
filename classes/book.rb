@@ -3,9 +3,9 @@ class Book < Item
   attr_accessor :publisher,  :cover_stat, :id
 
   def initialize(publisher, cover_stat)
-    
     @id = Random.rand(1..1000)
     @publisher = publisher
+    @cover_stat  = cover_stat
     
   end
 
@@ -15,3 +15,6 @@ class Book < Item
 
  
 end
+
+# book1 = Book.new("Joseph Thomas", "bad")
+# puts book1.publisher
