@@ -1,11 +1,17 @@
-require './item'
+require './app'
 class MakeChoice
+  def initialize
+    @app = App.new
+  end
+
   def on_exit
     puts 'Thanks for visiting Catalog of my things!'
+    @app.quit
     exit!
   end
 
   def display_list
+    @app.on_start
     puts 'Welcome to Catalog of my things!'
     puts "
           Choose an option by entering a number:
@@ -23,34 +29,34 @@ class MakeChoice
           12 - Add a movie
           13 - Exit"
   end
-
   # rubocop:disable Metrics/CyclomaticComplexity
+
   def choices(option)
     case option
     when 1
-      @item.List_all_books
+      @app.List_all_books
     when 2
-      @item.List_all_label
+      @app.List_all_label
     when 3
-      @item.List_all_MusicAlbum
+      @app.list_all_music_album
     when 4
-      @item.List_all_Genre
+      @app.list_all_genre
     when 5
-      @item.List_of_games
+      @app.List_of_games
     when 6
-      @item.List_all_authors
+      @app.List_all_authors
     when 7
-      @item.List_all_movies
+      @app.List_all_movies
     when 8
-      @item.List_all_sources
+      @app.List_all_sources
     when 9
-      @item.Add_a_game
+      @app.Add_a_game
     when 10
-      @item.Add_a_book
+      @app.Add_a_book
     when 11
-      @item.Add_a_music_album
+      @app.add_a_music_album
     else
-      @item.Add_a_movie
+      @app.Add_a_movie
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
