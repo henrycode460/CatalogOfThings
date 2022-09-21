@@ -1,4 +1,4 @@
-require_relative '../genre'
-require_relative '../item'
-require_relative '../musicalbum'
+require_relative '../classes/genre'
+require_relative '../classes/item'
+require_relative '../classes/musicalbum'
 require 'yaml'
