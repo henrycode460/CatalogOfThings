@@ -1,4 +1,4 @@
-require './item'
+require './classes/item'
 class MakeChoice
   def on_exit
     puts 'Thanks for visiting Catalog of my things!'
