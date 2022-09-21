@@ -1,6 +1,6 @@
-require_relative 'item'
-require_relative 'genre'
-require_relative 'musicalbum'
+require './classes/item'
+require './classes/genre'
+require './classes/musicalbum'
 require_relative 'storage'
 
 class App
