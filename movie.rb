@@ -3,8 +3,8 @@ require './item'
 class Movie < Item
   attr_accessor :silet
 
-  def initialize(silet)
-    super()
+  def initialize(id, silet)
+    super(id)
     @silet = silet
   end
 
