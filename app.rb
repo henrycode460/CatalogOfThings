@@ -3,7 +3,6 @@ require './classes/genre'
 require './classes/musicalbum'
 require_relative './classes/book'
 require_relative './classes/label'
-# require_relative './classes/create_book.rb'
 require_relative 'storage'
 require './classes/game'
 require './classes/author'
@@ -54,24 +53,14 @@ class App
     @genre.push(Genre.new(name))
     @musicalbums.push(MusicAlbum.new(name, publish_date, on_spotify))
   end
-  
-  # Add_game
+
   def add_game
     print 'Publish date [YYYY-MM-DD] : '
     publish_date = gets.chomp
 
     print 'Is multiplayer game? [ yes, no ]: '
-    multiplayer = gets.chomp
-
-    case multiplayer
-    when 'yes'
-      multiplayer = 'yes'
-    when 'no'
-      multiplayer = 'no'
-    else
-      puts 'yes or no'
-      multiplayer = gets.chomp
-    end
+    multi = gets.chomp
+    multiplayer = multi == 'yes'
 
     print 'is Archived [Y/N]: '
     archived = gets.chomp.downcase
@@ -105,8 +94,6 @@ class App
     puts 'New Game added successfully'
   end
 
-  # List game and author
-
   def list_authors
     if @authors.empty?
       puts 'No author in the catalog'
@@ -116,7 +103,6 @@ class App
 
     @authors.each_with_index do |author, i|
       puts "#{i + 1}) #{author.first_name} #{author.last_name}"
-      puts
     end
   end
 
@@ -132,7 +118,6 @@ class App
              publish date: #{game.publish_date},
              multiplayer: #{game.multiplayer},
              last_played_at: #{game.last_played_at}"
-      puts
     end
   end
   # create books
