@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe Label do
-  context 'it should create a genre and add items to it' do
+  context 'it should create a label and add items to it' do
     label1 = Label.new('Dragon Teaser', 'Brown')
     it 'it should return an instance of label ' do
       expect(label1.title).to eq 'Dragon Teaser'
