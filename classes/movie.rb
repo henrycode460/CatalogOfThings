@@ -2,10 +2,11 @@ require_relative 'item'
 require 'date'
 
 class Movie < Item
-  attr_accessor :silet
+  attr_accessor :silet, :name
 
-  def initialize(date, silet)
+  def initialize(name, date, silet)
     super(date)
+    @name = name
     @silet = silet
   end
 

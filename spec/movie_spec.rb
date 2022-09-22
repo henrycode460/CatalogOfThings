@@ -2,9 +2,10 @@ require_relative 'spec_helper'
 
 describe Movie do
   before :each do
+    name = 'Spiderman'
     silet = true
     date = '2010-10-24'
-    @movie = Movie.new(date, silet)
+    @movie = Movie.new(name, date, silet)
   end
 
   it 'Should create a Movie instance' do
