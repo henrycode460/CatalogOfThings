@@ -133,6 +133,8 @@ class App
              multiplayer: #{game.multiplayer},
              last_played_at: #{game.last_played_at}"
       puts
+    end
+  end
   # create books
 
   def create_book
