@@ -13,3 +13,24 @@ name TEXT
 
 ALTER TABLE musicalbum ADD COLUMN
 genre_id INT REFERENCES genre(id);
+
+CREATE TABLE source(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(200),
+  PRIMARY KEY(id)
+);
+
+
+ALTER TABLE musicalbum ADD COLUMN
+source_id INT REFERENCES source(id);
+
+CREATE TABLE movie(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(300),
+  source_id INT REFERENCES source(id),
+  genre_id INT REFERENCES genre(id),
+  publishe_date DATE,
+  archived BOOLEAN,
+  silet BOOLEAN,
+  PRIMARY KEY(id)
+);
