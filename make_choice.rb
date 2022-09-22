@@ -11,7 +11,7 @@ class MakeChoice
   end
 
   def display_list
-    @app.on_start
+    # @app.on_start
     puts 'Welcome to Catalog of my things!'
     puts "
           Choose an option by entering a number:
@@ -42,15 +42,15 @@ class MakeChoice
     when 4
       @app.list_all_genre
     when 5
-      @app.List_of_games
+      @app.list_games
     when 6
-      @app.List_all_authors
+      @app.list_authors
     when 7
       @app.List_all_movies
     when 8
       @app.list_label
     when 9
-      @app.List_all_sources
+      @app.add_game
     when 10
       @app.Add_a_game
     when 11
