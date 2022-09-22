@@ -8,7 +8,6 @@ describe Book do
     end
 
     it 'should return true if publish date is older then ten years or cover_state is equal to bad ' do
-   
       expect(book1.can_be_archived?).to eq true
     end
   end
