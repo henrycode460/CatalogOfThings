@@ -1,5 +1,5 @@
- require_relative '../classes/genre'
+require_relative '../classes/genre'
 require_relative '../classes/item'
-require_relative '../classes/label.rb'
- require_relative '../classes/musicalbum'
+require_relative '../classes/label'
+require_relative '../classes/musicalbum'
 require 'yaml'

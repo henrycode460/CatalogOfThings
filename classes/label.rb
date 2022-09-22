@@ -3,7 +3,7 @@ class Label < Item
   attr_accessor :title, :color, :items, :id
 
   def initialize(title, color)
-    
+    super(title, color)
     @id = Random.rand(1..1000)
     @title = title
     @color = color
