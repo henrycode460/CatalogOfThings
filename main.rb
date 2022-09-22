@@ -1,5 +1,6 @@
 require './make_choice'
 
+
 def main
   make_choice = MakeChoice.new
   loop do

@@ -54,4 +54,21 @@ module Storage
   rescue StandardError
     print 'no genre was saved'
   end
+# read books
+  def read_books
+    File.open('./json-files/book.json', 'r') do |file|
+      books = JSON.parse(file.read)
+      @books = []
+      books.each { |book| @books << book }
+    end
+  end
+
+  # read label
+  def read_label
+    File.open('./json-files/label.json', 'r') do |file|
+      labels = JSON.parse(file.read)
+      @labels = []
+      labels.each { |label| @labels << label }
+    end
+  end
 end
