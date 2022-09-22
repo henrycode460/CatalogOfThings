@@ -46,9 +46,9 @@ class MakeChoice
     when 6
       @app.List_all_authors
     when 7
-      @app.List_all_movies
+      @app.list_all_movies
     when 8
-      @app.List_all_sources
+      @app.list_all_sources
     when 9
       @app.Add_a_game
     when 10
@@ -56,7 +56,7 @@ class MakeChoice
     when 11
       @app.add_a_music_album
     else
-      @app.Add_a_movie
+      @app.add_a_movie
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity

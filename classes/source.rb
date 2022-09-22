@@ -11,4 +11,16 @@ class Source
     @items << item
     item.source = self
   end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'arguments' => [@name]
+    }.to_json(*args)
+  end
+
+  # Deserialize JSON string by constructing new Foo object with arguments.
+  def self.json_create(object)
+    new(*object['arguments'])
+  end
 end

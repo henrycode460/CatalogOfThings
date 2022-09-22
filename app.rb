@@ -1,14 +1,20 @@
 require './classes/item'
 require './classes/genre'
 require './classes/musicalbum'
+require './classes/movie'
+require './classes/source'
 require_relative 'storage'
+require_relative 'movie_module'
 
 class App
   include Storage
+  include MovieModule
 
   def initialize
     @genre = []
     @musicalbums = []
+    @movies = []
+    @sources = []
   end
 
   def list_all_music_album
@@ -52,5 +58,6 @@ class App
   def on_start
     read_music_album
     read_genre
+    load_movies_sources
   end
 end
