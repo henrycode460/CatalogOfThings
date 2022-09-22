@@ -12,4 +12,21 @@ name TEXT
 );
 
 ALTER TABLE musicalbum ADD COLUMN
-genre_id INT REFERENCES genre(id);
+genre_id INT REFERENCES genre(id
+
+CREATE TABLE book (
+   id SERIAL PRIMARY KEY,
+   publisher VARCHAR(50) NOT NULL,
+    cover_state INT NOT NULL,
+    
+);
+
+CREATE TABLE label (
+   id SERIAL PRIMARY KEY,
+   title VARCHAR(50) NOT NULL,
+   color VARCHAR(50) NOT NULL,
+   item_id int 
+   
+);
+
+ALTER TABLE label ADD CONSTRAINT fk_constraint FOREIGN KEY (item_id) REFERENCES item (id);
