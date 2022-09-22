@@ -34,9 +34,9 @@ class MakeChoice
   def choices(option)
     case option
     when 1
-      @app.List_all_books
+      @app.list_books
     when 2
-      @app.List_all_label
+      @app.create_label
     when 3
       @app.list_all_music_album
     when 4
@@ -48,12 +48,14 @@ class MakeChoice
     when 7
       @app.List_all_movies
     when 8
-      @app.List_all_sources
+      @app.list_label
     when 9
       @app.add_game
     when 10
-      @app.Add_a_book
+      @app.Add_a_game
     when 11
+      @app.create_book
+    when 12
       @app.add_a_music_album
     else
       @app.Add_a_movie
