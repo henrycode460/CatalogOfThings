@@ -1,5 +1,5 @@
 require './classes/game'
-require'./classes/item'
+require './classes/item'
 
 describe Game do
   before :each do

@@ -7,7 +7,6 @@ require './classes/author'
 require_relative 'store_game'
 require_relative 'store_author'
 
-
 class App
   include Storage
   include GamesPreserve
