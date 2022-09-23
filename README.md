@@ -11,6 +11,10 @@
 - POSTGRESQL
 - Rspec
 
+## Video Demo
+
+[video](https://drive.google.com/file/d/1yjJUKylTYxyhm3g8NODjRex9FmieNxjn/view?usp=sharing)
+
 
 ## Getting Started
 
