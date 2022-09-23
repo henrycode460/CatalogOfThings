@@ -6,21 +6,29 @@ require_relative './classes/label'
 require_relative 'storage'
 require './classes/game'
 require './classes/author'
+require './classes/movie'
+require './classes/source'
 require_relative 'store_game'
 require_relative 'store_author'
+require_relative 'movie_module'
+require_relative 'game_module'
 
 class App
   include Storage
   include GamesPreserve
   include AuthorsPreserve
+  include MovieModule
+  include GameModule
 
   def initialize
     @genre = []
     @musicalbums = []
-    @games = []
-    @authors = []
+    @games = load_games
+    @authors = load_authors
     @books = []
     @labels = []
+    @movies = []
+    @sources = []
   end
 
   def list_all_music_album
@@ -48,78 +56,14 @@ class App
     publish_date = gets.chomp
     print 'Is the music Album on_spotify [Y/N]: '
     spotify = gets.chomp.capitalize
+    print 'What genre does this belong to: '
+    gen = gets.chomp
     on_spotify = true if spotify == 'Y'
     on_spotify = false if spotify == 'N'
-    @genre.push(Genre.new(name))
+    @genre.push(Genre.new(gen))
     @musicalbums.push(MusicAlbum.new(name, publish_date, on_spotify))
   end
 
-  def add_game
-    print 'Publish date [YYYY-MM-DD] : '
-    publish_date = gets.chomp
-
-    print 'Is multiplayer game? [ yes, no ]: '
-    multi = gets.chomp
-    multiplayer = multi == 'yes'
-
-    print 'is Archived [Y/N]: '
-    archived = gets.chomp.downcase
-
-    case archived
-    when 'y'
-      archived = true
-
-    when 'n'
-      archived = false
-    else
-      puts('please enter [Y/N]: ')
-    end
-
-    print 'Last played at[YYYY-MM-DD]: '
-    last_played_at = gets.chomp
-
-    print 'Author First Name: '
-    first_name = gets.chomp
-
-    print 'Author Last Name: '
-    last_name = gets.chomp
-    author = Author.new(first_name, last_name)
-    @authors.push(author)
-    game = Game.new(publish_date, multiplayer, last_played_at, archived, first_name)
-    @games.push(game)
-
-    author.add_item(game)
-    game.add_author(author)
-
-    puts 'New Game added successfully'
-  end
-
-  def list_authors
-    if @authors.empty?
-      puts 'No author in the catalog'
-      return
-    end
-    puts "\n"
-
-    @authors.each_with_index do |author, i|
-      puts "#{i + 1}) #{author.first_name} #{author.last_name}"
-    end
-  end
-
-  def list_games
-    if @games.empty?
-      puts 'No game in the catalog'
-      return
-    end
-    puts "\n"
-
-    @games.each do |game|
-      print "Author: #{game.first_name},
-             publish date: #{game.publish_date},
-             multiplayer: #{game.multiplayer},
-             last_played_at: #{game.last_played_at}"
-    end
-  end
   # create books
 
   def create_book
@@ -130,6 +74,11 @@ class App
     cover_state = gets.chomp
     print ' Enter publish date: '
     publish_date = gets.chomp
+    print ' Enter the title of the label of the book: '
+    title = gets.chomp
+    print ' What color is the label: '
+    color = gets.chomp
+    create_label(title, color)
     new_book = Book.new(publisher, cover_state, publish_date)
     book_obj = { Publisher: new_book.publisher, CoverStatement: new_book.cover_state, Date: new_book.publish_date }
     @books << book_obj
@@ -153,12 +102,7 @@ class App
   end
 
   # create Label
-  def create_label
-    print "Create Label \n"
-    print ' Enter Label Title: '
-    title = gets.chomp
-    print ' Enter Label Color: '
-    color = gets.chomp
+  def create_label(title, color)
     new_label = Label.new(title, color)
     label_obj = { Title: new_label.title, Color: new_label.color }
     @labels << label_obj
@@ -193,5 +137,6 @@ class App
     read_genre
     read_books
     read_label
+    load_movies_sources
   end
 end

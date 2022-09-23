@@ -21,7 +21,7 @@ module AuthorsPreserve
         authorstore << Author.new(author['first_name'], author['last_name'])
       end
     else
-      File.write(author_file, '[]')
+      File.write(author_file, [])
     end
     authorstore
   end
