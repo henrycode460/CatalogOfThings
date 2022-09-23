@@ -1,56 +1,67 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of things
 
-> Description the project.
+> This is an app built with ruby that allows users store and display data. This data is also preserved in a json file.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- POSTGRESQL
+- Rspec
 
-## Live Demo (if available)
+## Video Demo
 
-[Live Demo Link](https://livedemo.com)
+[video](https://drive.google.com/file/d/1yjJUKylTYxyhm3g8NODjRex9FmieNxjn/view?usp=sharing)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- ruby
+- postgresql
+- rspec
 
 ### Setup
-
-### Install
+- Open terminal
+- Clone the repo using command `git clone https://github.com/henrycode460/CatalogOfThings.git`
+- Change directory using `cd CatalogOfThings`
+- Run `ruby main.rb`
 
 ### Usage
+- You can use the app to store list of items such as music albums, books etc
 
 ### Run tests
-
-### Deployment
-
+- run `rspec` in terminal
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Gasangwa Thomas** 
+- GitHub: [@githubhandle](https://github.com/gasangw) 
+- Twitter: [@twitterhandle](https://twitter.com/ThomasGasangwa) 
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gasangwa-thomas-84197222a/) 
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Gbenga Oyewunmi**
 
-👤 **Author2**
+- GitHub: [@githubhandle](https://github.com/kelomo2502 )
+- Twitter: [@twitterhandle](https://www.linkedin.com/in/oyewunmi-gbenga/)
+- LinkedIn: [LinkedIn](https://twitter.com/kelomoJs)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Toma John Musa**
+
+- GitHub: [@githubhandle](https://github.com/Kamba56)
+- Twitter: [@twitterhandle](https://www.linkedin.com/in/Kamba56)
+- LinkedIn: [LinkedIn](https://twitter.com/kamba_TJ)
+
+👤 **Henry Varflay Singbeh**
+
+- GitHub: [@githubhandle](https://github.com/henrycode460)
+- Twitter: [@twitterhandle](https://www.linkedin.com/in/henry-varflay-singbeh)
+- LinkedIn: [LinkedIn](https://twitter.com/code460 )
 
 ## 🤝 Contributing
 
