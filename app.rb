@@ -6,13 +6,17 @@ require_relative './classes/label'
 require_relative 'storage'
 require './classes/game'
 require './classes/author'
+require './classes/movie'
+require './classes/source'
 require_relative 'store_game'
 require_relative 'store_author'
+require_relative 'movie_module'
 
 class App
   include Storage
   include GamesPreserve
   include AuthorsPreserve
+  include MovieModule
 
   def initialize
     @genre = []
@@ -21,6 +25,8 @@ class App
     @authors = load_authors
     @books = []
     @labels = []
+    @movies = []
+    @sources = []
   end
 
   def list_all_music_album
@@ -195,5 +201,7 @@ class App
     read_genre
     read_books
     read_label
+    load_movies_sources
+    puts @musicalbums
   end
 end

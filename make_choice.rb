@@ -2,6 +2,7 @@ require './app'
 class MakeChoice
   def initialize
     @app = App.new
+    @app.on_start
   end
 
   def on_exit
@@ -11,7 +12,6 @@ class MakeChoice
   end
 
   def display_list
-    @app.on_start
     puts 'Welcome to Catalog of my things!'
     puts "
           Choose an option by entering a number:
@@ -46,9 +46,9 @@ class MakeChoice
     when 6
       @app.list_authors
     when 7
-      @app.List_all_movies
+      @app.list_all_movies
     when 8
-      @app.list_label
+      @app.list_all_sources
     when 9
       @app.add_game
     when 10
@@ -56,7 +56,7 @@ class MakeChoice
     when 11
       @app.add_a_music_album
     when 12
-      @app.Add_a_movie
+      @app.add_a_movie
     else
       display_list
     end

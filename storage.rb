@@ -1,22 +1,23 @@
 require 'json'
 
 module Storage
-  def load_music_album_to_file
-    items = MusicAlbum.new(name, publish_date, on_spotify)
-    items.each do |item|
-      @musicalbums << item
-    end
-  end
+  # def load_music_album_to_file
+  #   items = MusicAlbum.new(name, publish_date, on_spotify)
+  #   items.each do |item|
+  #     @musicalbums << item
+  #   end
+  # end
 
-  def load_genre_to_file
-    items = Genre.new(name)
-    items.each do |item|
-      @genre << item
-    end
-  end
+  # def load_genre_to_file
+  #   items = Genre.new(name)
+  #   items.each do |item|
+  #     @genre << item
+  #   end
+  # end
 
   # saving to the json files
   def save_state
+    puts @musicalbums
     items = @musicalbums.map do |music|
       { name: music.name, publish_date: music.publish_date, on_spotify: music.on_spotify }
     end
