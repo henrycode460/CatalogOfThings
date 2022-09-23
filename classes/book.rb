@@ -13,7 +13,3 @@ class Book < Item
     (Date.today - Date.parse(@publish_date)) / 365 > 10 || cover_state == 'bad'
   end
 end
-
-book1 = Book.new('Joseph Thomas', 'bad', '2002-05-05')
-puts book1.publish_date
-puts book1.can_be_archived?
