@@ -2,7 +2,6 @@ require 'json'
 
 module Storage
   def save_state
-    puts @musicalbums
     items = @musicalbums.map do |music|
       { name: music.name, publish_date: music.publish_date, on_spotify: music.on_spotify }
     end

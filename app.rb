@@ -138,6 +138,5 @@ class App
     read_books
     read_label
     load_movies_sources
-    puts @musicalbums
   end
 end
