@@ -11,7 +11,7 @@ class MakeChoice
   end
 
   def display_list
-    # @app.on_start
+    @app.on_start
     puts 'Welcome to Catalog of my things!'
     puts "
           Choose an option by entering a number:
@@ -36,7 +36,7 @@ class MakeChoice
     when 1
       @app.list_books
     when 2
-      @app.create_label
+      @app.list_label
     when 3
       @app.list_all_music_album
     when 4
@@ -52,13 +52,13 @@ class MakeChoice
     when 9
       @app.add_game
     when 10
-      @app.Add_a_game
-    when 11
       @app.create_book
-    when 12
+    when 11
       @app.add_a_music_album
-    else
+    when 12
       @app.Add_a_movie
+    else
+      display_list
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity

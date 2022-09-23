@@ -30,7 +30,7 @@ module GamesPreserve
                               game['first_name'])
       end
     else
-      File.write(game_file, '[]')
+      File.write(game_file, [])
     end
     gamestore
   end

@@ -17,8 +17,8 @@ class App
   def initialize
     @genre = []
     @musicalbums = []
-    @games = []
-    @authors = []
+    @games = load_games
+    @authors = load_authors
     @books = []
     @labels = []
   end
@@ -48,9 +48,11 @@ class App
     publish_date = gets.chomp
     print 'Is the music Album on_spotify [Y/N]: '
     spotify = gets.chomp.capitalize
+    print 'What genre does this belong to: '
+    gen = gets.chomp
     on_spotify = true if spotify == 'Y'
     on_spotify = false if spotify == 'N'
-    @genre.push(Genre.new(name))
+    @genre.push(Genre.new(gen))
     @musicalbums.push(MusicAlbum.new(name, publish_date, on_spotify))
   end
 
@@ -130,6 +132,11 @@ class App
     cover_state = gets.chomp
     print ' Enter publish date: '
     publish_date = gets.chomp
+    print ' Enter the title of the label of the book: '
+    title = gets.chomp
+    print ' What color is the label: '
+    color = gets.chomp
+    create_label(title, color)
     new_book = Book.new(publisher, cover_state, publish_date)
     book_obj = { Publisher: new_book.publisher, CoverStatement: new_book.cover_state, Date: new_book.publish_date }
     @books << book_obj
@@ -153,12 +160,7 @@ class App
   end
 
   # create Label
-  def create_label
-    print "Create Label \n"
-    print ' Enter Label Title: '
-    title = gets.chomp
-    print ' Enter Label Color: '
-    color = gets.chomp
+  def create_label(title, color)
     new_label = Label.new(title, color)
     label_obj = { Title: new_label.title, Color: new_label.color }
     @labels << label_obj

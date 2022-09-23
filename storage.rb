@@ -34,7 +34,7 @@ module Storage
   def read_music_album
     file = File.read('./json-files/music_album.json')
     read_music = JSON.parse(file)
-    puts read_music
+    # puts read_music
 
     read_music.each do |music|
       @musicalbums << MusicAlbum.new(music['name'], music['publish_date'], music['on_spotify'])
@@ -46,7 +46,7 @@ module Storage
   def read_genre
     file = File.read('./json-files/genre.json')
     read_each_genre = JSON.parse(file)
-    puts read_each_genre
+    # puts read_each_genre
 
     read_each_genre.each do |genre|
       @genre << Genre.new(genre['name'])
